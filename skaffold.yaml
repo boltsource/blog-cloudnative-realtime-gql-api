@@ -1,0 +1,13 @@
+apiVersion: skaffold/v2beta7
+kind: Config
+metadata:
+  name: blog-cloudnative-realtime-gql-api
+build:
+  artifacts:
+  - image: us.gcr.io/cloud-native-graphql-example/graphql
+deploy:
+  kubectl:
+    manifests:
+    - kubernetes/deployment.yaml
+    - kubernetes/ingress.yaml
+    - kubernetes/service.yaml

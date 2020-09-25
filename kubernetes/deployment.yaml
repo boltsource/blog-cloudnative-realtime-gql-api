@@ -1,0 +1,25 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: graphql
+  labels:
+    app: graphql
+spec:
+  selector:
+    matchLabels:
+      app: graphql
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: graphql
+    spec:
+      containers:
+      - name: graphql
+        image: us.gcr.io/cloud-native-graphql-example/graphql
+        resources:
+          requests:
+            memory: 1024Mi
+        env:
+        ports:
+        - containerPort: 8080
