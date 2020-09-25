@@ -1,7 +1,11 @@
 dist
+kubernetes
 node_modules
-LICENSE
-.nvmrc
-.gitignore
+.dockerignore
 .editorconfig
+.gitignore
+.nvmrc
+Dockerfile
+LICENSE
 README.md
+skaffold.yaml
